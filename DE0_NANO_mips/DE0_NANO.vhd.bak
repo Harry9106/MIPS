@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+library WORK;
+use WORK.components.all;
+
+entity DE0_NANO is
+    port (
+        reset : in std_logic;
+		  clk : in std_logic
+    );
+end DE0_NANO;
+
+architecture arch of DE0_NANO is
+
+component mips is
+    port (
+        reset : in std_logic;
+		  clk : in std_logic
+		  );
+end component;
+
+signal reset_signal, clk_signal: std_logic;
+
+begin
+	mips_0: mips port map (reset_signal, clk_signal);
+	reset_signal <= reset;
+	clk_signal <= clk;
+end arch;

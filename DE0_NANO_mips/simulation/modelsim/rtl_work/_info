@@ -1,0 +1,810 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/simulation/modelsim
+Eadder
+Z1 w1504303575
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/adder.vhd
+Z6 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/adder.vhd
+l0
+L7
+VTQQeGZDg0;LX@F`F9g_0C3
+!s100 ]b3k?bH]B45E5JQ5<bkL?3
+Z7 OV;C;10.3c;59
+31
+Z8 !s110 1504362736
+!i10b 1
+Z9 !s108 1504362736.630237
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/adder.vhd|
+Z11 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/adder.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1
+Abehavior
+R2
+R3
+R4
+DEx4 work 5 adder 0 22 TQQeGZDg0;LX@F`F9g_0C3
+l13
+L12
+VlO?6Nii32EKz[CKPYO9ZP3
+!s100 ocM4GEb:?<kA:n5P?dLba1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ealu
+R1
+R2
+R3
+R4
+R0
+Z14 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/alu.vhd
+Z15 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/alu.vhd
+l0
+L7
+VfFGf6IEda5`gNkUjB11KO3
+!s100 OAeoJN7j9]E4GV@SOLfJ@3
+R7
+31
+R8
+!i10b 1
+Z16 !s108 1504362736.569696
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/alu.vhd|
+Z18 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/alu.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+R4
+DEx4 work 3 alu 0 22 fFGf6IEda5`gNkUjB11KO3
+l19
+L16
+V>2ed]5d^]<o>5?3_z0Nna0
+!s100 GF6LAkm4H]o]Ok<8k?D3B2
+R7
+31
+R8
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R12
+R13
+Ealudec
+R1
+R2
+R3
+R4
+R0
+Z19 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/aludec.vhd
+Z20 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/aludec.vhd
+l0
+L5
+V5hbU_m6o^CoXMZgZmNbVU3
+!s100 _OjY0lJFJ1UZ^zmaP^h]F1
+R7
+31
+R8
+!i10b 1
+Z21 !s108 1504362736.505722
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/aludec.vhd|
+Z23 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/aludec.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+R4
+DEx4 work 6 aludec 0 22 5hbU_m6o^CoXMZgZmNbVU3
+l14
+L13
+VfmKWn9@nP7dmdIGc>z@j]3
+!s100 W_lE;SLF]bb;_W61DOX2<1
+R7
+31
+R8
+!i10b 1
+R21
+R22
+R23
+!i113 1
+R12
+R13
+Pcomponents
+R3
+R4
+w1504361052
+R0
+8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/components.vhd
+F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/components.vhd
+l0
+L21
+VjgD>^XRh9iFFJaAIgAcLC0
+!s100 QI0S6_2ea7;PVR]CLgVhe1
+R7
+31
+R8
+!i10b 1
+!s108 1504362736.450481
+!s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/components.vhd|
+!s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/components.vhd|
+!i113 1
+R12
+R13
+Econtroller
+Z24 w1504303576
+Z25 DPx4 work 10 components 0 22 jgD>^XRh9iFFJaAIgAcLC0
+R3
+R4
+R0
+Z26 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/controller.vhd
+Z27 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/controller.vhd
+l0
+L7
+VFB6K:]mF6_=I4h]iMSEJm2
+!s100 WfmK<5NVkjnVL`]jIQ23W2
+R7
+31
+Z28 !s110 1504362737
+!i10b 1
+Z29 !s108 1504362737.114729
+Z30 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/controller.vhd|
+Z31 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/controller.vhd|
+!i113 1
+R12
+R13
+Acont
+R25
+R3
+R4
+DEx4 work 10 controller 0 22 FB6K:]mF6_=I4h]iMSEJm2
+l22
+L15
+VkP;GDF7z@zcl^BnJSJbY33
+!s100 4MiC1@Bl=1V0M>;jX=]c80
+R7
+31
+R28
+!i10b 1
+R29
+R30
+R31
+!i113 1
+R12
+R13
+Ede0_nano
+Z32 w1504362182
+R25
+R3
+R4
+R0
+Z33 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/DE0_NANO.vhd
+Z34 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/DE0_NANO.vhd
+l0
+L7
+VD2j=A`@IiFNbDdWRXcJg>1
+!s100 ;kBz=MmmJ6F8m^6kjTX4c0
+R7
+31
+R28
+!i10b 1
+Z35 !s108 1504362737.171558
+Z36 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/DE0_NANO.vhd|
+Z37 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/DE0_NANO.vhd|
+!i113 1
+R12
+R13
+Aarch
+R25
+R3
+R4
+DEx4 work 8 de0_nano 0 22 D2j=A`@IiFNbDdWRXcJg>1
+l26
+L14
+VL`^9f32I>QPE_5z5ZCUz30
+!s100 h7bIiVQ4ckZ5I8ZiaA_2e2
+R7
+31
+R28
+!i10b 1
+R35
+R36
+R37
+!i113 1
+R12
+R13
+Edecode
+Z38 w1504303435
+R25
+R3
+R4
+R0
+Z39 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/decode.vhd
+Z40 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/decode.vhd
+l0
+L8
+V<6h<P0Ck`TlTfEDTK940o2
+!s100 R<zjkOU=`^]S9ODAaK@<b3
+R7
+31
+R8
+!i10b 1
+Z41 !s108 1504362736.797406
+Z42 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/decode.vhd|
+Z43 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/decode.vhd|
+!i113 1
+R12
+R13
+Abhv
+R25
+R3
+R4
+DEx4 work 6 decode 0 22 <6h<P0Ck`TlTfEDTK940o2
+l18
+L16
+V=liQo1g8F9I9;PgT6eh6:1
+!s100 ABkk`<2;aF@9e6f3Ga63n1
+R7
+31
+R8
+!i10b 1
+R41
+R42
+R43
+!i113 1
+R12
+R13
+Edmem
+R24
+R25
+Z44 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z45 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+R3
+R4
+R0
+Z46 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/dmem.vhd
+Z47 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/dmem.vhd
+l0
+L29
+Vn33Vf1[A]Ph_e`ZbzO5j_2
+!s100 UTJI9[n1G^^kFlK>0_QAT0
+R7
+31
+R28
+!i10b 1
+Z48 !s108 1504362737.042174
+Z49 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/dmem.vhd|
+Z50 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/dmem.vhd|
+!i113 1
+R12
+R13
+Abehave
+R25
+R44
+R45
+R3
+R4
+DEx4 work 4 dmem 0 22 n33Vf1[A]Ph_e`ZbzO5j_2
+l62
+L37
+VcCUYUZWe8k@a_2Rd_EmY91
+!s100 4V@Hl0bGkQFaA>AS6Gh9>3
+R7
+31
+R28
+!i10b 1
+R48
+R49
+R50
+!i113 1
+R12
+R13
+Eexecute
+Z51 w1504303408
+R25
+R3
+R4
+R0
+Z52 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/execute.vhd
+Z53 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/execute.vhd
+l0
+L8
+V1QQeZnFi<]XbHJcVnBoX11
+!s100 8HDcb;QPEU70^<D2ahP;d0
+R7
+31
+R8
+!i10b 1
+Z54 !s108 1504362736.744857
+Z55 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/execute.vhd|
+Z56 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/execute.vhd|
+!i113 1
+R12
+R13
+Abhv
+R25
+R3
+R4
+DEx4 work 7 execute 0 22 1QQeZnFi<]XbHJcVnBoX11
+l26
+L18
+VUIR5QgUXWFc?4;?nzaA820
+!s100 RTROK[N^GalBnZ0<@JW1F3
+R7
+31
+R8
+!i10b 1
+R54
+R55
+R56
+!i113 1
+R12
+R13
+Efetch
+Z57 w1504313599
+R25
+R3
+R4
+R0
+Z58 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/fetch.vhd
+Z59 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/fetch.vhd
+l0
+L8
+VYGOFYST8hL36OC093]Qck1
+!s100 ooXS>b_][ZTab9jb[M9d=0
+R7
+31
+R8
+!i10b 1
+Z60 !s108 1504362736.691089
+Z61 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/fetch.vhd|
+Z62 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/fetch.vhd|
+!i113 1
+R12
+R13
+Aasd
+R25
+R3
+R4
+DEx4 work 5 fetch 0 22 YGOFYST8hL36OC093]Qck1
+l31
+L14
+VZXAe3j20;AEiH9;HRBgS]0
+!s100 @6oZ=bMSI:VW5kBzl@IF]2
+R7
+31
+R8
+!i10b 1
+R60
+R61
+R62
+!i113 1
+R12
+R13
+Eflopr
+R24
+R2
+R3
+R4
+R0
+Z63 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/flopr.vhd
+Z64 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/flopr.vhd
+l0
+L5
+Vb05=4fneR<M^L89lc;=f53
+!s100 XAl_M^JAzU60Me?]g;AH]0
+R7
+31
+R8
+!i10b 1
+Z65 !s108 1504362736.378518
+Z66 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/flopr.vhd|
+Z67 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/flopr.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+R4
+DEx4 work 5 flopr 0 22 b05=4fneR<M^L89lc;=f53
+l16
+L15
+VM6edk`iX@V4H7jn=4BkUn3
+!s100 7zl4<YRTYM;UXN5FUdJYW2
+R7
+31
+R8
+!i10b 1
+R65
+R66
+R67
+!i113 1
+R12
+R13
+Eimem
+R24
+Z68 DPx9 altera_mf 20 altera_mf_components 0 22 BcHSMKj:G1nRHbg_[4bW[2
+R3
+R4
+R0
+Z69 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/imem.vhd
+Z70 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/imem.vhd
+l0
+L43
+V]YVQl@EfcQg5^NQORI09Z3
+!s100 Q53I=O0X]Xde3mEKi8?T62
+R7
+31
+R8
+!i10b 1
+Z71 !s108 1504362736.301156
+Z72 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/imem.vhd|
+Z73 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/imem.vhd|
+!i113 1
+R12
+R13
+Asyn
+R68
+R3
+R4
+DEx4 work 4 imem 0 22 ]YVQl@EfcQg5^NQORI09Z3
+l57
+L53
+VgRzQo1cTi@LcHfSodhA[:1
+!s100 g^[`hbCJ5E=>AS[10kPl;0
+R7
+31
+R8
+!i10b 1
+R71
+R72
+R73
+!i113 1
+R12
+R13
+Emaindec
+R24
+R3
+R4
+R0
+Z74 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/maindec.vhd
+Z75 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/maindec.vhd
+l0
+L5
+V5D47RTl_J47DGkBl@AOE?2
+!s100 8UFmb]cXQMYHSe[VS6Q382
+R7
+31
+R8
+!i10b 1
+Z76 !s108 1504362736.240792
+Z77 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/maindec.vhd|
+Z78 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/maindec.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R3
+R4
+DEx4 work 7 maindec 0 22 5D47RTl_J47DGkBl@AOE?2
+l14
+L13
+VLneIQJLEDCGPBoKKkI0ho0
+!s100 fXJddTD<Q>O3R:j^eo:Eo2
+R7
+31
+R8
+!i10b 1
+R76
+R77
+R78
+!i113 1
+R12
+R13
+Ememory
+R51
+R25
+R3
+R4
+R0
+Z79 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/memory.vhd
+Z80 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/memory.vhd
+l0
+L8
+V0Ni^RLIMR]FVf4:9VONZ71
+!s100 K<>_2JW`2m;?VV<X;KO4O2
+R7
+31
+R8
+!i10b 1
+Z81 !s108 1504362736.976369
+Z82 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/memory.vhd|
+Z83 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/memory.vhd|
+!i113 1
+R12
+R13
+Abhv
+R25
+R3
+R4
+DEx4 work 6 memory 0 22 0Ni^RLIMR]FVf4:9VONZ71
+l17
+L15
+Vj<ROhl9_bm5fz@G^>M:gm0
+!s100 ii>4i9WB[ON5:T`SB^]QE3
+R7
+31
+R8
+!i10b 1
+R81
+R82
+R83
+!i113 1
+R12
+R13
+Emips
+Z84 w1504361107
+R25
+R3
+R4
+R0
+Z85 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd
+Z86 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd
+l0
+L7
+VXg6W4I[W:@_zKg];zm>Ej3
+!s100 E4i6mXQ<oB?j[5A?k:Ana3
+R7
+31
+R8
+!i10b 1
+Z87 !s108 1504362736.912887
+Z88 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd|
+Z89 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd|
+!i113 1
+R12
+R13
+Aarch
+R25
+R3
+R4
+DEx4 work 4 mips 0 22 Xg6W4I[W:@_zKg];zm>Ej3
+l20
+L14
+VXP[dT9JZeR]WF;^1zZoEk1
+!s100 BV3moB1CXbja^_=DVdBE72
+R7
+31
+R8
+!i10b 1
+R87
+R88
+R89
+!i113 1
+R12
+R13
+Emux2
+Z90 w1504303577
+R2
+R3
+R4
+R0
+Z91 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mux2.vhd
+Z92 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mux2.vhd
+l0
+L7
+Vf8eg0V>Adz5bjU:T5z79d2
+!s100 MaXCP0i9g6DV5D^3z3lJ<0
+R7
+31
+R8
+!i10b 1
+Z93 !s108 1504362736.175640
+Z94 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mux2.vhd|
+Z95 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mux2.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+R4
+DEx4 work 4 mux2 0 22 f8eg0V>Adz5bjU:T5z79d2
+l15
+L14
+VF=XGR8P^TM]0N7I>jGYN_0
+!s100 FUgimEdR@CjDJWVn91gNJ2
+R7
+31
+R8
+!i10b 1
+R93
+R94
+R95
+!i113 1
+R12
+R13
+Eregfile
+Z96 w1504361459
+R3
+R4
+R0
+Z97 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/regfile.vhd
+Z98 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/regfile.vhd
+l0
+L6
+VTmiL0B=Z1JV9Qe[9l[mQ90
+!s100 5DON]^=P190XDY`UcC9<B3
+R7
+31
+R8
+!i10b 1
+Z99 !s108 1504362736.115652
+Z100 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/regfile.vhd|
+Z101 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/regfile.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R3
+R4
+DEx4 work 7 regfile 0 22 TmiL0B=Z1JV9Qe[9l[mQ90
+l29
+L15
+V3Pmc@mP@fB`[n[zS;K6I31
+!s100 MLNc_^`EHJf5PQKf3D7E81
+R7
+31
+R8
+!i10b 1
+R99
+R100
+R101
+!i113 1
+R12
+R13
+Esignext
+R90
+R2
+R3
+R4
+R0
+Z102 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/signext.vhd
+Z103 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/signext.vhd
+l0
+L7
+VOIWhdUK:5HfB;YXSLCXQa1
+!s100 :gXMLCW831O4<DKjDG@0E0
+R7
+31
+R8
+!i10b 1
+Z104 !s108 1504362736.045494
+Z105 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/signext.vhd|
+Z106 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/signext.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+R4
+DEx4 work 7 signext 0 22 OIWhdUK:5HfB;YXSLCXQa1
+l13
+L12
+VkM=0_O^OGZcHMY3L@`JJF0
+!s100 TGGlP1KRlK6zdNn=?zaRK2
+R7
+31
+R8
+!i10b 1
+R104
+R105
+R106
+!i113 1
+R12
+R13
+Esl2
+R90
+R2
+R3
+R4
+R0
+Z107 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/sl2.vhd
+Z108 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/sl2.vhd
+l0
+L7
+VDBHRfNDzfmc?<j4QGE<VP2
+!s100 :>6=^a2Wn:oj=fUM4VW5n1
+R7
+31
+Z109 !s110 1504362735
+!i10b 1
+Z110 !s108 1504362735.938982
+Z111 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/sl2.vhd|
+Z112 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/sl2.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+R4
+DEx4 work 3 sl2 0 22 DBHRfNDzfmc?<j4QGE<VP2
+l13
+L12
+VXe5lkDUN4ei1BePLk8aNX2
+!s100 Yj=Mb7A14Xcn2B@FVO]eo2
+R7
+31
+R109
+!i10b 1
+R110
+R111
+R112
+!i113 1
+R12
+R13
+Ewriteback
+Z113 w1504303407
+R25
+R3
+R4
+R0
+Z114 8/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/writeback.vhd
+Z115 F/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/writeback.vhd
+l0
+L8
+V;;z2F9@am]WoD4gB0>M;51
+!s100 K4:P:P@N^>39F2HNfhLKz2
+R7
+31
+R8
+!i10b 1
+Z116 !s108 1504362736.859285
+Z117 !s90 -reportprogress|300|-93|-work|work|/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/writeback.vhd|
+Z118 !s107 /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/writeback.vhd|
+!i113 1
+R12
+R13
+Abhv
+R25
+R3
+R4
+DEx4 work 9 writeback 0 22 ;;z2F9@am]WoD4gB0>M;51
+l16
+L14
+V=bm?20F30kF]Y@0C>mRW`1
+!s100 ZeUWd=Tj2P_?iYaIdXHYT1
+R7
+31
+R8
+!i10b 1
+R116
+R117
+R118
+!i113 1
+R12
+R13

@@ -1,0 +1,1432 @@
+Analysis & Synthesis report for DE0_NANO
+Thu Oct 19 15:25:57 2017
+Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Registers Added for RAM Pass-Through Logic
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0|altsyncram_mcc1:auto_generated
+ 17. Source assignments for mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_1|altsyncram_mcc1:auto_generated
+ 18. Source assignments for mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0|altsyncram_6c81:auto_generated
+ 19. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|fetch:fetch_c|mux2:PCMux
+ 20. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|fetch:fetch_c|mux2:JumpMux
+ 21. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF
+ 22. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|fetch:fetch_c|imem:IMemory
+ 23. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF
+ 24. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF
+ 25. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:RD1_FF
+ 26. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:RD2_FF
+ 27. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF
+ 28. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF
+ 29. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rt_FF
+ 30. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rd_FF
+ 31. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:AluControl_FF
+ 32. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|execute:execute_c|mux2:RegMux
+ 33. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|execute:execute_c|mux2:AluMux
+ 34. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:AluOut_FF
+ 35. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:PCBranch_FF
+ 36. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:WriteData_FF
+ 37. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:WriteReg_FF
+ 38. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:AluOut_FF
+ 39. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:ReadData_FF
+ 40. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:WriteReg_FF
+ 41. Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|writeback:writeback_c|mux2:mux
+ 42. Parameter Settings for User Entity Instance: clkDiv:clkDiv_0|lpm_counter:LPM_COUNTER_component
+ 43. Parameter Settings for Inferred Entity Instance: mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0
+ 44. Parameter Settings for Inferred Entity Instance: mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_1
+ 45. Parameter Settings for Inferred Entity Instance: mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0
+ 46. altsyncram Parameter Settings by Entity Instance
+ 47. Port Connectivity Checks: "clkDiv:clkDiv_0"
+ 48. Port Connectivity Checks: "mips:mips_0|datapath:datapath_c|fetch:fetch_c|adder:PCAdder"
+ 49. Port Connectivity Checks: "mips:mips_0|datapath:datapath_c|fetch:fetch_c|mux2:JumpMux"
+ 50. Port Connectivity Checks: "mips:mips_0|datapath:datapath_c"
+ 51. Port Connectivity Checks: "mips:mips_0"
+ 52. Post-Synthesis Netlist Statistics for Top Partition
+ 53. Elapsed Time Per Partition
+ 54. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 19 15:25:57 2017      ;
+; Quartus II 64-Bit Version          ; 14.1.0 Build 186 12/03/2014 SJ Web Edition ;
+; Revision Name                      ; DE0_NANO                                   ;
+; Top-level Entity Name              ; DE0_NANO                                   ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 613                                        ;
+;     Total combinational functions  ; 400                                        ;
+;     Dedicated logic registers      ; 407                                        ;
+; Total registers                    ; 407                                        ;
+; Total pins                         ; 11                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 4,096                                      ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                                      ; DE0_NANO           ; DE0_NANO           ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; hdl/imem.vhd                     ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/hdl/imem.vhd           ;         ;
+; writeback.vhd                    ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/writeback.vhd          ;         ;
+; sl2.vhd                          ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/sl2.vhd                ;         ;
+; signext.vhd                      ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/signext.vhd            ;         ;
+; regfile.vhd                      ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/regfile.vhd            ;         ;
+; mux2.vhd                         ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/mux2.vhd               ;         ;
+; mips.vhd                         ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/mips.vhd               ;         ;
+; mewb.vhd                         ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/mewb.vhd               ;         ;
+; memory.vhd                       ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/memory.vhd             ;         ;
+; maindec.vhd                      ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/maindec.vhd            ;         ;
+; ifde.vhd                         ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/ifde.vhd               ;         ;
+; flopr1.vhd                       ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/flopr1.vhd             ;         ;
+; flopr.vhd                        ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/flopr.vhd              ;         ;
+; fetch.vhd                        ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/fetch.vhd              ;         ;
+; exme.vhd                         ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/exme.vhd               ;         ;
+; execute.vhd                      ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/execute.vhd            ;         ;
+; dmem.vhd                         ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/dmem.vhd               ;         ;
+; deex.vhd                         ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/deex.vhd               ;         ;
+; decode.vhd                       ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/decode.vhd             ;         ;
+; datapath.vhd                     ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/datapath.vhd           ;         ;
+; controller.vhd                   ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/controller.vhd         ;         ;
+; aludec.vhd                       ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/aludec.vhd             ;         ;
+; alu.vhd                          ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/alu.vhd                ;         ;
+; adder.vhd                        ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/adder.vhd              ;         ;
+; DE0_NANO.vhd                     ; yes             ; User VHDL File               ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/DE0_NANO.vhd           ;         ;
+; clkDiv.vhd                       ; yes             ; User Wizard-Generated File   ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/clkDiv.vhd             ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_counter.tdf               ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_constant.inc              ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_decode.inc                ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_add_sub.inc               ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/cmpconst.inc                  ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_compare.inc               ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_counter.inc               ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/dffeea.inc                    ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/alt_counter_stratix.inc       ;         ;
+; aglobal141.inc                   ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/aglobal141.inc                ;         ;
+; db/cntr_rqh.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/db/cntr_rqh.tdf        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/altsyncram.tdf                ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/stratix_ram_block.inc         ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/lpm_mux.inc                   ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/a_rdenreg.inc                 ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/altrom.inc                    ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/altram.inc                    ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/14.1/quartus/libraries/megafunctions/altdpram.inc                  ;         ;
+; db/altsyncram_mcc1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/db/altsyncram_mcc1.tdf ;         ;
+; db/altsyncram_6c81.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/db/altsyncram_6c81.tdf ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                 ;
++---------------------------------------------+-----------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                         ;
++---------------------------------------------+-----------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 613                                                                                           ;
+;                                             ;                                                                                               ;
+; Total combinational functions               ; 400                                                                                           ;
+; Logic element usage by number of LUT inputs ;                                                                                               ;
+;     -- 4 input functions                    ; 175                                                                                           ;
+;     -- 3 input functions                    ; 184                                                                                           ;
+;     -- <=2 input functions                  ; 41                                                                                            ;
+;                                             ;                                                                                               ;
+; Logic elements by mode                      ;                                                                                               ;
+;     -- normal mode                          ; 305                                                                                           ;
+;     -- arithmetic mode                      ; 95                                                                                            ;
+;                                             ;                                                                                               ;
+; Total registers                             ; 407                                                                                           ;
+;     -- Dedicated logic registers            ; 407                                                                                           ;
+;     -- I/O registers                        ; 0                                                                                             ;
+;                                             ;                                                                                               ;
+; I/O pins                                    ; 11                                                                                            ;
+; Total memory bits                           ; 4096                                                                                          ;
+;                                             ;                                                                                               ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                             ;
+;                                             ;                                                                                               ;
+; Maximum fan-out node                        ; clkDiv:clkDiv_0|lpm_counter:LPM_COUNTER_component|cntr_rqh:auto_generated|counter_reg_bit[22] ;
+; Maximum fan-out                             ; 481                                                                                           ;
+; Total fan-out                               ; 3652                                                                                          ;
+; Average fan-out                             ; 3.95                                                                                          ;
++---------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Library Name ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |DE0_NANO                                          ; 400 (12)          ; 407 (8)      ; 4096        ; 0            ; 0       ; 0         ; 11   ; 0            ; |DE0_NANO                                                                                                                          ; work         ;
+;    |clkDiv:clkDiv_0|                               ; 23 (0)            ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|clkDiv:clkDiv_0                                                                                                          ; work         ;
+;       |lpm_counter:LPM_COUNTER_component|          ; 23 (0)            ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|clkDiv:clkDiv_0|lpm_counter:LPM_COUNTER_component                                                                        ; work         ;
+;          |cntr_rqh:auto_generated|                 ; 23 (23)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|clkDiv:clkDiv_0|lpm_counter:LPM_COUNTER_component|cntr_rqh:auto_generated                                                ; work         ;
+;    |mips:mips_0|                                   ; 365 (0)           ; 376 (0)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0                                                                                                              ; work         ;
+;       |controller:controller_c|                    ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|controller:controller_c                                                                                      ; work         ;
+;          |aludec:aludec_c|                         ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|controller:controller_c|aludec:aludec_c                                                                      ; work         ;
+;          |maindec:maindec_c|                       ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|controller:controller_c|maindec:maindec_c                                                                    ; work         ;
+;       |datapath:datapath_c|                        ; 357 (0)           ; 376 (0)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c                                                                                          ; work         ;
+;          |decode:decode_c|                         ; 10 (0)            ; 148 (0)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|decode:decode_c                                                                          ; work         ;
+;             |regfile:registers|                    ; 10 (10)           ; 148 (148)    ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers                                                        ; work         ;
+;                |altsyncram:memory_rtl_0|           ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0                                ; work         ;
+;                   |altsyncram_mcc1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0|altsyncram_mcc1:auto_generated ; work         ;
+;                |altsyncram:memory_rtl_1|           ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_1                                ; work         ;
+;                   |altsyncram_mcc1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_1|altsyncram_mcc1:auto_generated ; work         ;
+;          |deex:decode_execute_C|                   ; 64 (0)            ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C                                                                    ; work         ;
+;             |flopr1:AluSrc_FF|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr1:AluSrc_FF                                                   ; work         ;
+;             |flopr1:MemToReg_FF|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr1:MemToReg_FF                                                 ; work         ;
+;             |flopr1:MemWrite_FF|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr1:MemWrite_FF                                                 ; work         ;
+;             |flopr1:RegDst_FF|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr1:RegDst_FF                                                   ; work         ;
+;             |flopr1:RegWrite_FF|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr1:RegWrite_FF                                                 ; work         ;
+;             |flopr:AluControl_FF|                  ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:AluControl_FF                                                ; work         ;
+;             |flopr:PCPlus_FF|                      ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF                                                    ; work         ;
+;             |flopr:RD1_FF|                         ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:RD1_FF                                                       ; work         ;
+;             |flopr:RD2_FF|                         ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:RD2_FF                                                       ; work         ;
+;             |flopr:Rt_FF|                          ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rt_FF                                                        ; work         ;
+;             |flopr:Signlmm_FF|                     ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF                                                   ; work         ;
+;          |execute:execute_c|                       ; 209 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|execute:execute_c                                                                        ; work         ;
+;             |alu:MipsAlu|                          ; 173 (173)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|execute:execute_c|alu:MipsAlu                                                            ; work         ;
+;             |mux2:AluMux|                          ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|execute:execute_c|mux2:AluMux                                                            ; work         ;
+;             |mux2:RegMux|                          ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|execute:execute_c|mux2:RegMux                                                            ; work         ;
+;          |exme:execute_memory_c|                   ; 6 (0)             ; 79 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c                                                                    ; work         ;
+;             |flopr1:Branch_FF|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr1:Branch_FF                                                   ; work         ;
+;             |flopr1:MemToReg_FF|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr1:MemToReg_FF                                                 ; work         ;
+;             |flopr1:MemWrite_FF|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr1:MemWrite_FF                                                 ; work         ;
+;             |flopr1:RegWrite_FF|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr1:RegWrite_FF                                                 ; work         ;
+;             |flopr1:Zero_FF|                       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr1:Zero_FF                                                     ; work         ;
+;             |flopr:AluOut_FF|                      ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:AluOut_FF                                                    ; work         ;
+;             |flopr:PCBranch_FF|                    ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:PCBranch_FF                                                  ; work         ;
+;             |flopr:WriteData_FF|                   ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:WriteData_FF                                                 ; work         ;
+;             |flopr:WriteReg_FF|                    ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:WriteReg_FF                                                  ; work         ;
+;          |fetch:fetch_c|                           ; 36 (0)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|fetch:fetch_c                                                                            ; work         ;
+;             |adder:PCAdder|                        ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|fetch:fetch_c|adder:PCAdder                                                              ; work         ;
+;             |flopr:PCFF|                           ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF                                                                 ; work         ;
+;             |imem:IMemory|                         ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|fetch:fetch_c|imem:IMemory                                                               ; work         ;
+;             |mux2:JumpMux|                         ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|fetch:fetch_c|mux2:JumpMux                                                               ; work         ;
+;          |ifde:fetch_decode_c|                     ; 0 (0)             ; 18 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c                                                                      ; work         ;
+;             |flopr:Instr_FF|                       ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF                                                       ; work         ;
+;             |flopr:PCPlus_FF|                      ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF                                                      ; work         ;
+;          |memory:memory_c|                         ; 0 (0)             ; 1 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|memory:memory_c                                                                          ; work         ;
+;             |dmem:mem|                             ; 0 (0)             ; 1 (1)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem                                                                 ; work         ;
+;                |altsyncram:ram_rtl_0|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0                                            ; work         ;
+;                   |altsyncram_6c81:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0|altsyncram_6c81:auto_generated             ; work         ;
+;          |mewb:memory_writeback_c|                 ; 0 (0)             ; 38 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c                                                                  ; work         ;
+;             |flopr1:MemToReg_FF|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr1:MemToReg_FF                                               ; work         ;
+;             |flopr1:RegWrite_FF|                   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr1:RegWrite_FF                                               ; work         ;
+;             |flopr:AluOut_FF|                      ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:AluOut_FF                                                  ; work         ;
+;             |flopr:WriteReg_FF|                    ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:WriteReg_FF                                                ; work         ;
+;          |writeback:writeback_c|                   ; 32 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|writeback:writeback_c                                                                    ; work         ;
+;             |mux2:mux|                             ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_NANO|mips:mips_0|datapath:datapath_c|writeback:writeback_c|mux2:mux                                                           ; work         ;
++----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                        ;
++-------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                                ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0|altsyncram_mcc1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_1|altsyncram_mcc1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
+; mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0|altsyncram_6c81:auto_generated|ALTSYNCRAM             ; AUTO ; Single Port      ; 64           ; 32           ; --           ; --           ; 2048 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                       ;
++--------+--------------+---------+--------------+--------------+---------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance           ; IP Include File ;
++--------+--------------+---------+--------------+--------------+---------------------------+-----------------+
+; Altera ; LPM_COUNTER  ; 14.1    ; N/A          ; N/A          ; |DE0_NANO|clkDiv:clkDiv_0 ; clkDiv.vhd      ;
++--------+--------------+---------+--------------+--------------+---------------------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                       ;
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+; Register name                                                                               ; Reason for Removal                                                                         ;
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF|q[15..31]            ; Merged with mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rd_FF|q[4]         ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF|q[14]                ; Merged with mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rd_FF|q[3]         ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF|q[13]                ; Merged with mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rd_FF|q[2]         ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF|q[12]                ; Merged with mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rd_FF|q[1]         ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF|q[11]                ; Merged with mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rd_FF|q[0]         ;
+; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[1]                               ; Merged with mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[0]                  ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[1]                  ; Merged with mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[0]     ;
+; mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:PCBranch_FF|q[1]                ; Merged with mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:PCBranch_FF|q[0]   ;
+; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[1]                    ; Merged with mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[0]       ;
+; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF|q[18,20,23,25]           ; Stuck at GND due to stuck port data_in                                                     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rt_FF|q[2,4]                    ; Stuck at GND due to stuck port data_in                                                     ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[6,10] ; Stuck at GND due to stuck port data_in                                                     ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[6,10] ; Stuck at GND due to stuck port data_in                                                     ;
+; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF|q[27]                    ; Merged with mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF|q[31]       ;
+; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF|q[19]                    ; Merged with mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF|q[29]       ;
+; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF|q[4..15]                 ; Merged with mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF|q[28]       ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr1:Branch_FF|q                    ; Merged with mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF|q[4]    ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF|q[5..10]             ; Merged with mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF|q[4]    ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rd_FF|q[0..4]                   ; Merged with mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF|q[4]    ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr1:Jump_FF|q                      ; Stuck at GND due to stuck port data_in                                                     ;
+; mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr1:Jump_FF|q                      ; Stuck at GND due to stuck port data_in                                                     ;
+; mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:WriteReg_FF|q[4]                ; Merged with mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:WriteReg_FF|q[2]   ;
+; mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:WriteReg_FF|q[4]              ; Merged with mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:WriteReg_FF|q[2] ;
+; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[0,8..31]                         ; Lost fanout                                                                                ;
+; mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:PCBranch_FF|q[0]                ; Lost fanout                                                                                ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[0,8..31]            ; Lost fanout                                                                                ;
+; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[0,8..31]              ; Lost fanout                                                                                ;
+; Total Number of Removed Registers = 141                                                     ;                                                                                            ;
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                             ;
++-----------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; Register name                                                               ; Reason for Removal        ; Registers Removed due to This Register                                        ;
++-----------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr1:Jump_FF|q      ; Stuck at GND              ; mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr1:Jump_FF|q,       ;
+;                                                                             ; due to stuck port data_in ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[30],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[29],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[28],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[27],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[26],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[25],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[24],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[23],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[22],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[21],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[20],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[19],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[18],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[17],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[16],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[15],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[14],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[13],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[12],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[11],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[10],               ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[9],                ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[8]                 ;
+; mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[0]               ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:PCBranch_FF|q[0], ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[0],   ;
+;                                                                             ;                           ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[0]      ;
+; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF|q[20]    ; Stuck at GND              ; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rt_FF|q[4]        ;
+;                                                                             ; due to stuck port data_in ;                                                                               ;
+; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF|q[18]    ; Stuck at GND              ; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rt_FF|q[2]        ;
+;                                                                             ; due to stuck port data_in ;                                                                               ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[31] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[31]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[30] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[30]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[29] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[29]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[28] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[28]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[27] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[27]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[26] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[26]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[25] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[25]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[24] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[24]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[23] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[23]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[22] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[22]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[21] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[21]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[20] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[20]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[19] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[19]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[18] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[18]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[17] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[17]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[16] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[16]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[15] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[15]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[14] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[14]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[13] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[13]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[12] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[12]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[11] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[11]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[10] ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[10]     ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[9]  ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[9]      ;
+; mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF|q[8]  ; Lost Fanouts              ; mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF|q[8]      ;
++-----------------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 407   ;
+; Number of registers using Synchronous Clear  ; 64    ;
+; Number of registers using Synchronous Load   ; 64    ;
+; Number of registers using Asynchronous Clear ; 236   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 72    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                                                                                                 ;
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+; Register Name                                                                             ; RAM Name                                                                       ;
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[0]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[1]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[2]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[3]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[4]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[5]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[6]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[7]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[8]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[9]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[10] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[11] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[12] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[13] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[14] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[15] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[16] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[17] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[18] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[19] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[20] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[21] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[22] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[23] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[24] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[25] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[26] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[27] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[28] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[29] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[30] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[31] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[32] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[33] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[34] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[35] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[36] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[37] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[38] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[39] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[40] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[41] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0_bypass[42] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[0]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[1]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[2]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[3]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[4]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[5]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[6]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[7]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[8]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[9]  ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[10] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[11] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[12] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[13] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[14] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[15] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[16] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[17] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[18] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[19] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[20] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[21] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[22] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[23] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[24] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[25] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[26] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[27] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[28] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[29] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[30] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[31] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[32] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[33] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[34] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[35] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[36] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[37] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[38] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[39] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[40] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[41] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
+; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1_bypass[42] ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1 ;
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                                   ;
++------------------------------------------------------------------------------------+--------------------------------------------------------------------+------+
+; Register Name                                                                      ; Megafunction                                                       ; Type ;
++------------------------------------------------------------------------------------+--------------------------------------------------------------------+------+
+; mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:ReadData_FF|q[0..31] ; mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|ram_rtl_0 ; RAM  ;
++------------------------------------------------------------------------------------+--------------------------------------------------------------------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE0_NANO|mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[22]          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_NANO|mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[29]          ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |DE0_NANO|mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF|q[23]          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:RD1_FF|q[4] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DE0_NANO|mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:RD2_FF|q[1] ;
+; 7:1                ; 31 bits   ; 124 LEs       ; 124 LEs              ; 0 LEs                  ; No         ; |DE0_NANO|mips:mips_0|datapath:datapath_c|execute:execute_c|alu:MipsAlu|Mux26     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0|altsyncram_mcc1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_1|altsyncram_mcc1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                 ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0|altsyncram_6c81:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                    ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                     ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|fetch:fetch_c|mux2:PCMux ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|fetch:fetch_c|mux2:JumpMux ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|fetch:fetch_c|imem:IMemory ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; data_width     ; 32    ; Signed Integer                                                                 ;
+; addr_width     ; 6     ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:Instr_FF ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c|flopr:PCPlus_FF ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:RD1_FF ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:RD2_FF ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:PCPlus_FF ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Signlmm_FF ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rt_FF ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rd_FF ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:AluControl_FF ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|execute:execute_c|mux2:RegMux ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|execute:execute_c|mux2:AluMux ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:AluOut_FF ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:PCBranch_FF ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:WriteData_FF ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|exme:execute_memory_c|flopr:WriteReg_FF ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:AluOut_FF ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:ReadData_FF ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c|flopr:WriteReg_FF ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mips:mips_0|datapath:datapath_c|writeback:writeback_c|mux2:mux ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clkDiv:clkDiv_0|lpm_counter:LPM_COUNTER_component ;
++------------------------+--------------+--------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                   ;
++------------------------+--------------+--------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                         ;
+; LPM_WIDTH              ; 23           ; Signed Integer                                         ;
+; LPM_DIRECTION          ; UP           ; Untyped                                                ;
+; LPM_MODULUS            ; 0            ; Untyped                                                ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                                ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                                ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                     ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                     ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                                ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                                ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                                ;
+; CBXI_PARAMETER         ; cntr_rqh     ; Untyped                                                ;
++------------------------+--------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0 ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                           ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                        ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                                        ;
+; WIDTH_A                            ; 32                   ; Untyped                                                                        ;
+; WIDTHAD_A                          ; 5                    ; Untyped                                                                        ;
+; NUMWORDS_A                         ; 32                   ; Untyped                                                                        ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                        ;
+; WIDTH_B                            ; 32                   ; Untyped                                                                        ;
+; WIDTHAD_B                          ; 5                    ; Untyped                                                                        ;
+; NUMWORDS_B                         ; 32                   ; Untyped                                                                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                        ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                                                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                                        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                        ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                        ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                                        ;
+; CBXI_PARAMETER                     ; altsyncram_mcc1      ; Untyped                                                                        ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_1 ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                           ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                        ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                                        ;
+; WIDTH_A                            ; 32                   ; Untyped                                                                        ;
+; WIDTHAD_A                          ; 5                    ; Untyped                                                                        ;
+; NUMWORDS_A                         ; 32                   ; Untyped                                                                        ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                        ;
+; WIDTH_B                            ; 32                   ; Untyped                                                                        ;
+; WIDTHAD_B                          ; 5                    ; Untyped                                                                        ;
+; NUMWORDS_B                         ; 32                   ; Untyped                                                                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                        ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                                                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                                        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                        ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                        ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                                        ;
+; CBXI_PARAMETER                     ; altsyncram_mcc1      ; Untyped                                                                        ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+--------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                               ;
++------------------------------------+----------------------+--------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                            ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                                            ;
+; WIDTH_A                            ; 32                   ; Untyped                                                            ;
+; WIDTHAD_A                          ; 6                    ; Untyped                                                            ;
+; NUMWORDS_A                         ; 64                   ; Untyped                                                            ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                            ;
+; WIDTH_B                            ; 1                    ; Untyped                                                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                            ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                            ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA             ; Untyped                                                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                            ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                            ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                            ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                            ;
+; CBXI_PARAMETER                     ; altsyncram_6c81      ; Untyped                                                            ;
++------------------------------------+----------------------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                      ;
++-------------------------------------------+-------------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                                     ;
++-------------------------------------------+-------------------------------------------------------------------------------------------+
+; Number of entity instances                ; 3                                                                                         ;
+; Entity Instance                           ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                                 ;
+;     -- WIDTH_A                            ; 32                                                                                        ;
+;     -- NUMWORDS_A                         ; 32                                                                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                              ;
+;     -- WIDTH_B                            ; 32                                                                                        ;
+;     -- NUMWORDS_B                         ; 32                                                                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                 ;
+; Entity Instance                           ; mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_1 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                                 ;
+;     -- WIDTH_A                            ; 32                                                                                        ;
+;     -- NUMWORDS_A                         ; 32                                                                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                              ;
+;     -- WIDTH_B                            ; 32                                                                                        ;
+;     -- NUMWORDS_B                         ; 32                                                                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                 ;
+; Entity Instance                           ; mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0             ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                               ;
+;     -- WIDTH_A                            ; 32                                                                                        ;
+;     -- NUMWORDS_A                         ; 64                                                                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                              ;
+;     -- WIDTH_B                            ; 1                                                                                         ;
+;     -- NUMWORDS_B                         ; 1                                                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                 ;
++-------------------------------------------+-------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clkDiv:clkDiv_0"                                                                        ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; q[21..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mips:mips_0|datapath:datapath_c|fetch:fetch_c|adder:PCAdder" ;
++----------+-------+----------+-----------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                   ;
++----------+-------+----------+-----------------------------------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                                              ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                                              ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                                              ;
++----------+-------+----------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mips:mips_0|datapath:datapath_c|fetch:fetch_c|mux2:JumpMux" ;
++----------+-------+----------+----------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                  ;
++----------+-------+----------+----------------------------------------------------------+
+; d1[1..0] ; Input ; Info     ; Stuck at GND                                             ;
++----------+-------+----------+----------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mips:mips_0|datapath:datapath_c"                                                            ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; instr[25..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mips:mips_0"                                                                                  ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; memdata[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 11                          ;
+; cycloneiii_ff         ; 407                         ;
+;     CLR               ; 172                         ;
+;     CLR SCLR SLD      ; 64                          ;
+;     ENA               ; 72                          ;
+;     plain             ; 99                          ;
+; cycloneiii_lcell_comb ; 400                         ;
+;     arith             ; 95                          ;
+;         2 data inputs ; 28                          ;
+;         3 data inputs ; 67                          ;
+;     normal            ; 305                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 117                         ;
+;         4 data inputs ; 175                         ;
+; cycloneiii_ram_block  ; 96                          ;
+;                       ;                             ;
+; Max LUT depth         ; 9.10                        ;
+; Average LUT depth     ; 3.27                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
+    Info: Processing started: Thu Oct 19 15:25:45 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_NANO -c DE0_NANO
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file hdl/imem.vhd
+    Info (12022): Found design unit 1: imem-rtl
+    Info (12023): Found entity 1: imem
+Info (12021): Found 2 design units, including 1 entities, in source file writeback.vhd
+    Info (12022): Found design unit 1: writeback-behavior
+    Info (12023): Found entity 1: writeback
+Info (12021): Found 2 design units, including 1 entities, in source file sl2.vhd
+    Info (12022): Found design unit 1: sl2-behavioral
+    Info (12023): Found entity 1: sl2
+Info (12021): Found 2 design units, including 1 entities, in source file signext.vhd
+    Info (12022): Found design unit 1: signext-behavioral
+    Info (12023): Found entity 1: signext
+Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
+    Info (12022): Found design unit 1: regfile-behavior
+    Info (12023): Found entity 1: regfile
+Info (12021): Found 2 design units, including 1 entities, in source file mux2.vhd
+    Info (12022): Found design unit 1: mux2-behavioral
+    Info (12023): Found entity 1: mux2
+Info (12021): Found 2 design units, including 1 entities, in source file mips.vhd
+    Info (12022): Found design unit 1: mips-behavior
+    Info (12023): Found entity 1: mips
+Info (12021): Found 2 design units, including 1 entities, in source file mewb.vhd
+    Info (12022): Found design unit 1: mewb-behavior
+    Info (12023): Found entity 1: mewb
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: memory-behavior
+    Info (12023): Found entity 1: memory
+Info (12021): Found 2 design units, including 1 entities, in source file maindec.vhd
+    Info (12022): Found design unit 1: maindec-behavior
+    Info (12023): Found entity 1: maindec
+Info (12021): Found 2 design units, including 1 entities, in source file ifde.vhd
+    Info (12022): Found design unit 1: ifde-behavior
+    Info (12023): Found entity 1: ifde
+Info (12021): Found 2 design units, including 1 entities, in source file flopr1.vhd
+    Info (12022): Found design unit 1: flopr1-behaviour
+    Info (12023): Found entity 1: flopr1
+Info (12021): Found 2 design units, including 1 entities, in source file flopr.vhd
+    Info (12022): Found design unit 1: flopr-behavioral
+    Info (12023): Found entity 1: flopr
+Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
+    Info (12022): Found design unit 1: fetch-behavior
+    Info (12023): Found entity 1: fetch
+Info (12021): Found 2 design units, including 1 entities, in source file exme.vhd
+    Info (12022): Found design unit 1: exme-behavior
+    Info (12023): Found entity 1: exme
+Info (12021): Found 2 design units, including 1 entities, in source file execute.vhd
+    Info (12022): Found design unit 1: execute-behavior
+    Info (12023): Found entity 1: execute
+Info (12021): Found 2 design units, including 1 entities, in source file dmem.vhd
+    Info (12022): Found design unit 1: dmem-rtl
+    Info (12023): Found entity 1: dmem
+Info (12021): Found 2 design units, including 1 entities, in source file deex.vhd
+    Info (12022): Found design unit 1: deex-behavior
+    Info (12023): Found entity 1: deex
+Info (12021): Found 2 design units, including 1 entities, in source file decode.vhd
+    Info (12022): Found design unit 1: decode-behavior
+    Info (12023): Found entity 1: decode
+Info (12021): Found 2 design units, including 1 entities, in source file datapath.vhd
+    Info (12022): Found design unit 1: datapath-behavior
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 2 design units, including 1 entities, in source file controller.vhd
+    Info (12022): Found design unit 1: controller-behavior
+    Info (12023): Found entity 1: controller
+Info (12021): Found 2 design units, including 1 entities, in source file aludec.vhd
+    Info (12022): Found design unit 1: aludec-behaviour
+    Info (12023): Found entity 1: aludec
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-behavioral
+    Info (12023): Found entity 1: alu
+Info (12021): Found 2 design units, including 1 entities, in source file adder.vhd
+    Info (12022): Found design unit 1: adder-behavioral
+    Info (12023): Found entity 1: adder
+Info (12021): Found 2 design units, including 1 entities, in source file de0_nano.vhd
+    Info (12022): Found design unit 1: DE0_NANO-arch
+    Info (12023): Found entity 1: DE0_NANO
+Info (12021): Found 2 design units, including 1 entities, in source file clkdiv.vhd
+    Info (12022): Found design unit 1: clkdiv-SYN
+    Info (12023): Found entity 1: clkDiv
+Info (12127): Elaborating entity "DE0_NANO" for the top level hierarchy
+Info (12128): Elaborating entity "mips" for hierarchy "mips:mips_0"
+Info (12128): Elaborating entity "controller" for hierarchy "mips:mips_0|controller:controller_c"
+Info (12128): Elaborating entity "maindec" for hierarchy "mips:mips_0|controller:controller_c|maindec:maindec_c"
+Info (12128): Elaborating entity "aludec" for hierarchy "mips:mips_0|controller:controller_c|aludec:aludec_c"
+Info (12128): Elaborating entity "datapath" for hierarchy "mips:mips_0|datapath:datapath_c"
+Info (12128): Elaborating entity "fetch" for hierarchy "mips:mips_0|datapath:datapath_c|fetch:fetch_c"
+Info (12128): Elaborating entity "mux2" for hierarchy "mips:mips_0|datapath:datapath_c|fetch:fetch_c|mux2:PCMux"
+Info (12128): Elaborating entity "flopr" for hierarchy "mips:mips_0|datapath:datapath_c|fetch:fetch_c|flopr:PCFF"
+Info (12128): Elaborating entity "imem" for hierarchy "mips:mips_0|datapath:datapath_c|fetch:fetch_c|imem:IMemory"
+Warning (10541): VHDL Signal Declaration warning at imem.vhd(22): used implicit default value for signal "rom" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "adder" for hierarchy "mips:mips_0|datapath:datapath_c|fetch:fetch_c|adder:PCAdder"
+Info (12128): Elaborating entity "ifde" for hierarchy "mips:mips_0|datapath:datapath_c|ifde:fetch_decode_c"
+Info (12128): Elaborating entity "decode" for hierarchy "mips:mips_0|datapath:datapath_c|decode:decode_c"
+Info (12128): Elaborating entity "signext" for hierarchy "mips:mips_0|datapath:datapath_c|decode:decode_c|signext:signextend"
+Info (12128): Elaborating entity "regfile" for hierarchy "mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers"
+Warning (10492): VHDL Process Statement warning at regfile.vhd(26): signal "we3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regfile.vhd(33): signal "memory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regfile.vhd(39): signal "memory" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "deex" for hierarchy "mips:mips_0|datapath:datapath_c|deex:decode_execute_C"
+Info (12128): Elaborating entity "flopr" for hierarchy "mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:Rt_FF"
+Info (12128): Elaborating entity "flopr" for hierarchy "mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr:AluControl_FF"
+Info (12128): Elaborating entity "flopr1" for hierarchy "mips:mips_0|datapath:datapath_c|deex:decode_execute_C|flopr1:Jump_FF"
+Info (12128): Elaborating entity "execute" for hierarchy "mips:mips_0|datapath:datapath_c|execute:execute_c"
+Info (12128): Elaborating entity "mux2" for hierarchy "mips:mips_0|datapath:datapath_c|execute:execute_c|mux2:RegMux"
+Info (12128): Elaborating entity "sl2" for hierarchy "mips:mips_0|datapath:datapath_c|execute:execute_c|sl2:Shift2"
+Info (12128): Elaborating entity "alu" for hierarchy "mips:mips_0|datapath:datapath_c|execute:execute_c|alu:MipsAlu"
+Info (12128): Elaborating entity "exme" for hierarchy "mips:mips_0|datapath:datapath_c|exme:execute_memory_c"
+Info (12128): Elaborating entity "memory" for hierarchy "mips:mips_0|datapath:datapath_c|memory:memory_c"
+Info (12128): Elaborating entity "dmem" for hierarchy "mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem"
+Warning (10542): VHDL Variable Declaration warning at dmem.vhd(30): used initial value expression for variable "aux" because variable was never assigned a value
+Info (12128): Elaborating entity "mewb" for hierarchy "mips:mips_0|datapath:datapath_c|mewb:memory_writeback_c"
+Info (12128): Elaborating entity "writeback" for hierarchy "mips:mips_0|datapath:datapath_c|writeback:writeback_c"
+Info (12128): Elaborating entity "clkDiv" for hierarchy "clkDiv:clkDiv_0"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "clkDiv:clkDiv_0|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "clkDiv:clkDiv_0|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "clkDiv:clkDiv_0|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "23"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_rqh.tdf
+    Info (12023): Found entity 1: cntr_rqh
+Info (12128): Elaborating entity "cntr_rqh" for hierarchy "clkDiv:clkDiv_0|lpm_counter:LPM_COUNTER_component|cntr_rqh:auto_generated"
+Warning (276020): Inferred RAM node "mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (113028): 46 out of 64 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 2 warnings found, and 2 warnings are reported.
+    Warning (113027): Addresses ranging from 10 to 15 are not initialized
+    Warning (113027): Addresses ranging from 24 to 63 are not initialized
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|memory_rtl_1" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 64
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0"
+Info (12133): Instantiated megafunction "mips:mips_0|datapath:datapath_c|decode:decode_c|regfile:registers|altsyncram:memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mcc1.tdf
+    Info (12023): Found entity 1: altsyncram_mcc1
+Info (12130): Elaborated megafunction instantiation "mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "mips:mips_0|datapath:datapath_c|memory:memory_c|dmem:mem|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "6"
+    Info (12134): Parameter "NUMWORDS_A" = "64"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6c81.tdf
+    Info (12023): Found entity 1: altsyncram_6c81
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 76 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]"
+Info (21057): Implemented 797 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 690 logic cells
+    Info (21064): Implemented 96 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 748 megabytes
+    Info: Processing ended: Thu Oct 19 15:25:57 2017
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:22
+
+

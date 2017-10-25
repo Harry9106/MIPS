@@ -1,0 +1,174 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/simulation/qsim
+vDE0_NANO
+Z0 !s110 1508437174
+!i10b 1
+!s100 l9Um`:Yfi@kK_fC^L9@3[2
+Ig:>PVo_]Km`7471[FSR]a0
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
+Z2 dC:/Users/Agus/Desktop/MIPS_proy_agustin/DE0_NANO_mips/simulation/qsim
+w1508437173
+Z3 8DE0_NANO.vo
+Z4 FDE0_NANO.vo
+Z5 L0 32
+Z6 OV;L;10.3c;59
+r1
+!s85 0
+31
+!s108 1508437174.649000
+Z7 !s107 DE0_NANO.vo|
+Z8 !s90 -work|work|DE0_NANO.vo|
+!i113 1
+Z9 o-work work
+n@d@e0_@n@a@n@o
+vDE0_NANO_vlg_check_tst
+Z10 !s110 1508343911
+!i10b 1
+!s100 W=fnJ;2Y?PB6DkeWAWhm_2
+IRP:c[Lfc]_n5lCX=mWcZH3
+R1
+Z11 d/home/amallea153/Escritorio/MIPS_proy_agustin/DE0_NANO_mips/simulation/qsim
+Z12 w1508343578
+Z13 8Waveform20.vwf.vt
+Z14 FWaveform20.vwf.vt
+Z15 L0 60
+R6
+r1
+!s85 0
+31
+Z16 !s108 1508343911.551984
+Z17 !s107 Waveform20.vwf.vt|
+Z18 !s90 -work|work|Waveform20.vwf.vt|
+!i113 1
+R9
+n@d@e0_@n@a@n@o_vlg_check_tst
+vDE0_NANO_vlg_sample_tst
+R10
+!i10b 1
+!s100 Vlm1N45I1F7TO1kgl_Q??2
+ISTCTlFKobmXAQgESzNCaz1
+R1
+R11
+R12
+R13
+R14
+Z19 L0 30
+R6
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 1
+R9
+n@d@e0_@n@a@n@o_vlg_sample_tst
+vDE0_NANO_vlg_vec_tst
+R0
+!i10b 1
+!s100 `DZT2YmQ>jTRN374V60l21
+ITHAiOeREIa@7Wlh^PYgN01
+R1
+R2
+w1508437172
+8ejercicio2extra.vwf.vt
+Fejercicio2extra.vwf.vt
+R19
+R6
+r1
+!s85 0
+31
+!s108 1508437174.815000
+!s107 ejercicio2extra.vwf.vt|
+!s90 -work|work|ejercicio2extra.vwf.vt|
+!i113 1
+R9
+n@d@e0_@n@a@n@o_vlg_vec_tst
+vmips
+Z20 !s110 1508437508
+!i10b 1
+!s100 gdY6UHmFVS4hebSlk6G8Z3
+Ilk9404zQfMi0WFj@W:=_<2
+R1
+R2
+w1508437507
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+!s108 1508437508.473000
+R7
+R8
+!i113 1
+R9
+vmips_vlg_check_tst
+R20
+!i10b 1
+!s100 [QdQO1=e1=KP;@ZCKEYSK1
+IUh99c;C>TTN@O]BSze=g42
+R1
+R2
+Z21 w1508437505
+Z22 8ejercicio1_fixed.vwf.vt
+Z23 Fejercicio1_fixed.vwf.vt
+R15
+R6
+r1
+!s85 0
+31
+Z24 !s108 1508437508.674000
+Z25 !s107 ejercicio1_fixed.vwf.vt|
+Z26 !s90 -work|work|ejercicio1_fixed.vwf.vt|
+!i113 1
+R9
+vmips_vlg_sample_tst
+R20
+!i10b 1
+!s100 h>PNN;mQI[IHnZeF1@N?[0
+IiPnbmh3515C@XUO3fO?h10
+R1
+R2
+R21
+R22
+R23
+R19
+R6
+r1
+!s85 0
+31
+R24
+R25
+R26
+!i113 1
+R9
+vmips_vlg_vec_tst
+R20
+!i10b 1
+!s100 W0gJ:[DY8[klLR;X[iI7l3
+IdPFlA<91_WzLKOL_R`0SN0
+R1
+R2
+R21
+R22
+R23
+L0 1323
+R6
+r1
+!s85 0
+31
+R24
+R25
+R26
+!i113 1
+R9

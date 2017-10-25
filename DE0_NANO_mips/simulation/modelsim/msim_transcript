@@ -1,0 +1,371 @@
+# do DE0_NANO_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim LE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying /opt/altera/14.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /opt/altera/14.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/sl2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:15 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/sl2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sl2
+# -- Compiling architecture Behavior of sl2
+# End time: 11:32:15 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/signext.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/signext.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity signext
+# -- Compiling architecture Behavior of signext
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/regfile.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/regfile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity regfile
+# -- Compiling architecture behavior of regfile
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mux2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mux2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux2
+# -- Compiling architecture Behavior of mux2
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/maindec.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/maindec.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity maindec
+# -- Compiling architecture behavior of maindec
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/imem.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/imem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity imem
+# -- Compiling architecture SYN of imem
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/flopr.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/flopr.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity flopr
+# -- Compiling architecture behavior of flopr
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/components.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package components
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/aludec.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/aludec.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity aludec
+# -- Compiling architecture behavior of aludec
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/alu.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/alu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity alu
+# -- Compiling architecture Behavior of alu
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/adder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity adder
+# -- Compiling architecture Behavior of adder
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/fetch.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/fetch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components
+# -- Compiling entity fetch
+# -- Compiling architecture asd of fetch
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/execute.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/execute.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components
+# -- Compiling entity execute
+# -- Compiling architecture bhv of execute
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/decode.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/decode.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components
+# -- Compiling entity decode
+# -- Compiling architecture bhv of decode
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/writeback.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/writeback.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components
+# -- Compiling entity writeback
+# -- Compiling architecture bhv of writeback
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components
+# -- Compiling entity mips
+# -- Compiling architecture arch of mips
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/memory.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components
+# -- Compiling entity memory
+# -- Compiling architecture bhv of memory
+# End time: 11:32:16 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/dmem.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:16 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_SIGNED
+# -- Loading package components
+# -- Compiling entity dmem
+# -- Compiling architecture behave of dmem
+# ** Warning: /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/dmem.vhd(45): (vcom-1194) FILE declaration was written using VHDL 1987 syntax.
+# End time: 11:32:17 on Sep 02,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:17 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components
+# -- Compiling entity controller
+# -- Compiling architecture cont of controller
+# End time: 11:32:17 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/DE0_NANO.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 11:32:17 on Sep 02,2017
+# vcom -reportprogress 300 -93 -work work /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/DE0_NANO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components
+# -- Compiling entity DE0_NANO
+# -- Compiling architecture arch of DE0_NANO
+# End time: 11:32:17 on Sep 02,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.mips
+# vsim -i -l msim_transcript -do "DE0_NANO_run_msim_rtl_vhdl.do" 
+# Start time: 11:33:36 on Sep 02,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.components
+# Loading work.mips(arch)
+# Loading work.controller(cont)
+# Loading work.maindec(behavior)
+# Loading ieee.numeric_std(body)
+# Loading work.aludec(behavior)
+# ** Warning: (vsim-3473) Component instance "datapath_0 : datapath" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /mips File: /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+wave create -pattern none -portmode in -language vhdl /mips/reset
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+# mips
+wave create -pattern none -portmode in -language vhdl /mips/clk
+# mips
+wave create -pattern none -portmode in -language vhdl /mips/dump
+# mips
+wave create -pattern none -portmode out -language vhdl -range 31 0 /mips/instr
+# mips
+wave create -pattern none -portmode out -language vhdl -range 31 0 /mips/pc
+# mips
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 10ns -dutycycle 50 -starttime 0ns -endtime 1000ns Edit:/mips/clk
+# mips
+wave modify -driver freeze -pattern constant -value 1 -starttime 0ns -endtime 80ns Edit:/mips/reset
+# mips
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 40ns -dutycycle 50 -starttime 0ns -endtime 1000ns Edit:/mips/clk
+# mips
+wave modify -driver freeze -pattern constant -value 00 -starttime 80ns -endtime 1000ns Edit:/mips/reset
+# ** Error: (vish-4026) Value "00" does not represent a literal of the enumeration type.
+#Invalid value to -value switch: 00
+# Usage: wave modify -driver <freeze|deposit|drive|expectedOutput> -pattern constant -value <value> [-range <msb lsb>] -starttime <Time> -endtime <Time> netName
+wave modify -driver freeze -pattern constant -value 0 -starttime 80ns -endtime 1000ns Edit:/mips/reset
+# mips
+wave modify -driver freeze -pattern constant -value 1 -starttime 760ps -endtime 880ps Edit:/mips/dump
+# mips
+wave modify -driver freeze -pattern constant -value 1 -starttime 0ns -endtime 760ns Edit:/mips/dump
+# mips
+wave modify -driver freeze -pattern constant -value 0 -starttime 0ns -endtime 760ns Edit:/mips/dump
+# mips
+wave modify -driver freeze -pattern constant -value 1 -starttime 760ns -endtime 880ns Edit:/mips/dump
+# mips
+wave modify -driver freeze -pattern constant -value 0 -starttime 880ns -endtime 1000ns Edit:/mips/dump
+# mips
+run
+add wave -position insertpoint  \
+sim:/mips/instr \
+sim:/mips/pc
+restart
+# ** Warning: (vsim-3473) Component instance "datapath_0 : datapath" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /mips File: /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd
+run
+wave modify -driver freeze -pattern constant -value 1 -starttime 0ns -endtime 90ns Edit:/mips/reset
+# mips
+restart
+# ** Warning: (vsim-3473) Component instance "datapath_0 : datapath" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /mips File: /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd
+run
+vsim work.de0_nano
+# vsim 
+# Start time: 15:10:36 on Sep 02,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.components
+# Loading work.de0_nano(arch)
+# Loading work.mips(arch)
+# Loading work.controller(cont)
+# Loading work.maindec(behavior)
+# Loading ieee.numeric_std(body)
+# Loading work.aludec(behavior)
+# ** Warning: (vsim-3473) Component instance "datapath_0 : datapath" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_nano/mips_0 File: /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+wave create -pattern none -portmode in -language vhdl /de0_nano/reset
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+# de0_nano
+wave create -pattern none -portmode in -language vhdl /de0_nano/clk
+# de0_nano
+wave create -pattern none -portmode in -language vhdl /de0_nano/dump
+# de0_nano
+wave create -pattern none -portmode out -language vhdl -range 31 0 /de0_nano/instr
+# de0_nano
+wave create -pattern none -portmode out -language vhdl -range 31 0 /de0_nano/pc
+# de0_nano
+wave modify -driver freeze -pattern constant -value 1 -starttime 0ns -endtime 90ns Edit:/de0_nano/clk
+# de0_nano
+wave modify -driver freeze -pattern constant -value 0 -starttime 90ns -endtime 1000ns Edit:/de0_nano/reset
+# de0_nano
+wave modify -driver freeze -pattern constant -value 0 -starttime 90ns -endtime 1000ns Edit:/de0_nano/reset
+# de0_nano
+wave modify -driver freeze -pattern constant -value 1 -starttime 0ns -endtime 90ns Edit:/de0_nano/reset
+# de0_nano
+wave modify -driver freeze -pattern clock -initialvalue (no value) -period 40ns -dutycycle 50 -starttime 0ns -endtime 1000ns Edit:/de0_nano/clk
+# ** Error: (vish-4026) Value "(no" does not represent a literal of the enumeration type.
+#Invalid value to -initialvalue switch: (no
+# 
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 40ns -dutycycle 50 -starttime 0ns -endtime 1000ns Edit:/de0_nano/clk
+# de0_nano
+wave modify -driver freeze -pattern constant -value 0 -starttime 0ps -endtime 1000ps Edit:/de0_nano/dump
+# de0_nano
+wave modify -driver freeze -pattern constant -value 0 -starttime 0ns -endtime 1000ns Edit:/de0_nano/dump
+# de0_nano
+wave modify -driver freeze -pattern constant -value 1 -starttime 760ns -endtime 880ns Edit:/de0_nano/dump
+# de0_nano
+run
+add wave -position end  sim:/de0_nano/instr
+add wave -position end  sim:/de0_nano/pc
+restart
+# ** Warning: (vsim-3473) Component instance "datapath_0 : datapath" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /de0_nano/mips_0 File: /home/gvodanovic/ArqComp/top/e2/DE0_NANO_mips/hdl/mips.vhd
+run
+# End time: 15:16:56 on Sep 02,2017, Elapsed time: 0:06:20
+# Errors: 1, Warnings: 2

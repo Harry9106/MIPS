@@ -1,0 +1,17 @@
+DEPTH = 64;                   -- The size of memory in words
+WIDTH = 32;                    -- The size of data in bits
+ADDRESS_RADIX = HEX;          -- The radix for address values
+DATA_RADIX = HEX;             -- The radix for data values
+CONTENT                       -- start of (address : data pairs)
+BEGIN
+
+00: 20080001;                 -- memory address : data
+01: 21090002;
+02: 212a0002;
+03: 214b0002;
+04: ac080000;
+05: ac090004,
+06: ac0a0008;
+07: ac0b000c;
+08: 1000ffff;
+END;
