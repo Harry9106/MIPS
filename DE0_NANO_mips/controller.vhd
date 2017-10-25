@@ -20,12 +20,12 @@ architecture behavior of controller is
 begin
 
 	maindec_c : maindec port map	(Op => Op, RegDst => RegDst,
-											RegWrite => RegWrite, Jump => Jump,
-											AluOp => AluOp_s, MemToReg => MemToReg,
-											MemWrite => MemWrite, Branch => Branch,
-											AluSrc => AluSrc);
+					RegWrite => RegWrite, Jump => Jump,
+					AluOp => AluOp_s, MemToReg => MemToReg,
+					MemWrite => MemWrite, Branch => Branch,
+					AluSrc => AluSrc);
 
 	aludec_c : aludec port map	(funct => Funct, aluop => AluOp_s,
-										alucontrol => AluControl);
+					alucontrol => AluControl);
 
 end architecture;
